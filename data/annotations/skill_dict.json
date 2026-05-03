@@ -1,0 +1,91 @@
+{
+  "sap abap": "TECH_SKILL",
+  "sap cs": "TECH_SKILL",
+  "sap sd": "TECH_SKILL",
+  "sap mm": "TECH_SKILL",
+  "sap pm": "TECH_SKILL",
+  "sap eam": "TECH_SKILL",
+  "sap fico": "TECH_SKILL",
+  "sap wcm": "TECH_SKILL",
+  "sap dms": "TECH_SKILL",
+  "sap btp": "TECH_SKILL",
+
+  "sap integration": "TECH_SKILL",
+  "sap pi": "TECH_SKILL",
+  "cpi": "TECH_SKILL",
+  "hci": "TECH_SKILL",
+
+  "abap": "TECH_SKILL",
+  "abap oo": "TECH_SKILL",
+  "badi": "TECH_SKILL",
+  "cds views": "TECH_SKILL",
+  "amdp": "TECH_SKILL",
+  "data dictionary": "TECH_SKILL",
+  "module pool programming": "TECH_SKILL",
+  "dialog programming": "TECH_SKILL",
+  "alv": "TECH_SKILL",
+  "smartforms": "TECH_SKILL",
+  "sap debugging": "TECH_SKILL",
+
+  "idoc": "TECH_SKILL",
+  "rfc": "TECH_SKILL",
+  "bapi": "TECH_SKILL",
+  "edi": "TECH_SKILL",
+  "ale": "TECH_SKILL",
+
+  "rest": "TECH_SKILL",
+  "soap": "TECH_SKILL",
+  "apis": "TECH_SKILL",
+
+  "fiori": "TECH_SKILL",
+  "ui5": "TECH_SKILL",
+  "odata": "TECH_SKILL",
+  "rap model": "TECH_SKILL",
+
+  "lsmw": "TECH_SKILL",
+  "bdc": "TECH_SKILL",
+  "ltmc": "TECH_SKILL",
+  "ltmom": "TECH_SKILL",
+
+  "json": "TECH_SKILL",
+  "xml": "TECH_SKILL",
+  "xsd": "TECH_SKILL",
+  "wsdl": "TECH_SKILL",
+  "webservice": "TECH_SKILL",
+
+  "docker": "TECH_SKILL",
+  "kubernetes": "TECH_SKILL",
+  "aws": "TECH_SKILL",
+
+  "python": "TECH_SKILL",
+  "c": "TECH_SKILL",
+  "c++": "TECH_SKILL",
+  "sql": "TECH_SKILL",
+
+  "5g": "TECH_SKILL",
+  "4g": "TECH_SKILL",
+  "3g protocols": "TECH_SKILL",
+  "3gpp architecture": "TECH_SKILL",
+
+  "plant maintenance": "TECH_SKILL",
+  "preventive maintenance": "TECH_SKILL",
+  "breakdown maintenance": "TECH_SKILL",
+
+  "sap security configuration": "TECH_SKILL",
+  "oauth2 authentication": "TECH_SKILL",
+  "ssh": "TECH_SKILL",
+  "client certificate management": "TECH_SKILL",
+  "keystore management": "TECH_SKILL",
+
+  "plm": "TECH_SKILL",
+  "pim": "TECH_SKILL",
+  "scada": "TECH_SKILL",
+
+  "functional testing": "TECH_SKILL",
+  "integration testing": "TECH_SKILL",
+  "uat": "TECH_SKILL",
+
+  "team player": "SOFT_SKILL",
+  "problem solver": "SOFT_SKILL",
+  "good communication": "SOFT_SKILL"
+}

@@ -1,0 +1,41 @@
+{
+  "Data Scientist": [
+    "data science",
+    "machine learning",
+    "predictive modeling"
+  ],
+  "ML Engineer": [
+    "ml engineer",
+    "model deployment",
+    "ml pipeline"
+  ],
+  "Frontend Developer": [
+    "frontend",
+    "react",
+    "ui development"
+  ],
+  "Backend Developer": [
+    "backend",
+    "api",
+    "server"
+  ],
+  "SAP ABAP Developer": [
+    "abap",
+    "sap abap",
+    "rfc",
+    "bapi"
+  ],
+  "SAP Technical Consultant": [
+    "technical consultant",
+    "sap consultant",
+    "implementation",
+    "configuration",
+    "integration"
+  ],
+  "Project Manager": [
+    "project manager",
+    "stakeholder",
+    "delivery",
+    "timeline"
+  ]
+}

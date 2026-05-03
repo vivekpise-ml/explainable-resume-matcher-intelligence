@@ -1,0 +1,16 @@
+data/raw/
+*.pdf
+*.docx
+__pycache__/
+*.pyc
+.env
+src/rough_for_percent_to_number.py
+data/backup-orig
+data/Data.csv
+data/orig_Data.csv
+data/sap_ta_abap_1_Data_new.csv
+data/sap_ta_abap_1_Data.csv
+data/updated_Data.csv
+models
+data/annotations/backup-annotations
+*.zip

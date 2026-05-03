@@ -1,0 +1,97 @@
+{
+  "web technologies": [
+    "json",
+    "xml",
+    "xsd",
+    "wsdl",
+    "webservice"
+  ],
+  
+  "sap abap": [
+    "oo abap",
+    "odata",
+    "cds views",
+    "abap on hana",
+    "sap btp",
+    "soap",
+    "rest",
+    "badi",
+    "user exits",
+    "customer exits",
+    "module pool programming",
+    "smart forms",
+    "alv programming",
+    "workflow",
+    "adobe forms",
+    "sap script",
+    "data dictionary",
+    "report programming",
+    "web dynpro abap",
+    "dialog programming",
+    "web technologies"
+  ],
+
+  "sap pm": [
+    "function location",
+    "work order",
+    "notification",
+    "task list",
+    "maintenance plan",
+    "equipment",
+    "measuring points",
+    "work center"
+  ],
+
+  "sap cs": [
+    "sap pm",
+    "service order",
+    "sales order",
+    "debit memo request",
+    "workshop repair"
+  ],
+
+  "sap interface and integration": [
+    "ale",
+    "idocs",
+    "edi",
+    "bapis",
+    "change pointers",
+    "a2a and b2b configuration"
+  ],
+
+  "msd crm solution architect": [
+    "dynamics 365 field service",
+    "work order management",
+    "asset management",
+    "mobile configuration",
+    "quality assurance",
+    "architecture",
+    "solution design",
+    "process design",
+    "integration design",
+    "data migration",
+    "d365 sales",
+    "d365 service",
+    "d365 field service",
+    "power platform"
+
+  ],
+
+  
+  "sap basic and security": [
+    "sap security configuration",
+    "oauth2 authentication",
+    "ssh",
+    "client certificate management",
+    "keystore management",
+    "upgrade"
+  ],
+
+  "sap mm": [],
+  "sap sd": [],
+  "sap fico": [],
+  "sap pp": [],
+  "sap wm": [],
+  "sap ewm": []
+  
+}

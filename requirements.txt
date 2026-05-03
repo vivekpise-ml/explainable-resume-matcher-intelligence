@@ -1,0 +1,14 @@
+spacy
+transformers
+torch
+pandas
+pymupdf
+python-docx
+scikit-learn
+tqdm
+pdfplumber
+streamlit
+shap
+matplotlib
+PyPDF2
+torchvision

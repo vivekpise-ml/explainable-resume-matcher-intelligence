@@ -1,0 +1,86 @@
+{
+  "Manufacturing": {
+    "companies": ["tata steel", "reliance", "pfizer"],
+    "core_skills": [
+      "manufacturing", "plant", "industrial", "production", "maintenance",
+      "sap pm", "sap eam", "sap mm",
+      "abap", "sap abap", "odata", "bapi", "alv", "smartforms"
+    ]
+  },
+
+  "Industrial Machine": {
+    "companies": ["atlas copco", "siemens", "caterpillar", "john deere"],
+    "core_skills": [
+      "industrial", "machine", "heavy equipment", "mechanical",
+      "maintenance", "plant",
+      "sap pm", "sap eam",
+      "plm", "scada"
+    ]
+  },
+
+  "Automobile": {
+    "companies": ["tata motors", "toyota", "honda", "nissan"],
+    "core_skills": [
+      "automobile", "vehicle", "automotive", "assembly", "production",
+      "sap mm", "sap sd",
+      "manufacturing", "supply chain"
+    ]
+  },
+
+  "Insurance": {
+    "companies": ["tata aig", "bajaj allianz", "iffco tokio", "icici lombard"],
+    "core_skills": [
+      "insurance", "policy", "claims", "underwriting", "risk",
+      "actuarial", "premium"
+    ]
+  },
+
+  "Finance": {
+    "companies": ["hdfc", "icici", "bank"],
+    "core_skills": [
+      "finance", "banking", "loan", "credit", "risk",
+      "accounting", "sap fico"
+    ]
+  },
+
+  "Utilities": {
+    "companies": ["tata power", "adani power"],
+    "core_skills": [
+      "power", "energy", "utilities", "grid", "electricity",
+      "maintenance", "plant"
+    ]
+  },
+
+  "Retail": {
+    "companies": ["amazon", "walmart", "flipkart"],
+    "core_skills": [
+      "retail", "ecommerce", "inventory", "supply chain",
+      "sap mm", "order management"
+    ]
+  },
+
+  "Logistic": {
+    "companies": ["dhl", "fedex", "delhivery", "blue dart"],
+    "core_skills": [
+      "logistics", "shipping", "delivery", "warehouse",
+      "supply chain", "transport"
+    ]
+  },
+
+  "IT Services": {
+    "companies": ["tcs", "infosys", "wipro", "accenture", "ibm"],
+    "core_skills": [
+      "software", "api", "cloud", "integration",
+      "sap", "abap", "programming",
+      "microservices", "backend"
+    ]
+  },
+
+  "HiTech Manufacturing": {
+    "companies": ["intel", "samsung", "tesla", "boeing"],
+    "core_skills": [
+      "electronics", "semiconductor", "embedded", "hardware",
+      "manufacturing", "production"
+    ]
+  }
+}
