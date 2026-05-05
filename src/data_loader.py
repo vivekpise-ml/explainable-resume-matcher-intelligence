@@ -5,17 +5,46 @@ import math
 from docx import Document
 import pdfplumber
 
+from pdf2image import convert_from_path
+import pytesseract
+
+def ocr_pdf(path):
+    text = ""
+    images = convert_from_path(path)
+
+    for img in images:
+        text += pytesseract.image_to_string(img)
+
+    return text
 
 def read_docx(path):
     doc = Document(path)
     return "\n".join([p.text for p in doc.paragraphs])
 
 
+'''
 def read_pdf(path):
     text = ""
     with pdfplumber.open(path) as pdf:
         for page in pdf.pages:
             text += page.extract_text() or ""
+    return text
+'''
+
+def read_pdf(path):
+    text = ""
+
+    with pdfplumber.open(path) as pdf:
+        for page in pdf.pages:
+            page_text = page.extract_text()
+            if page_text:
+                text += page_text
+
+    # 🔥 fallback if weak extraction
+    if len(text.strip()) < 300:
+        print(f"⚠️ OCR fallback triggered for as weak extraction detected: {path}")
+        text = ocr_pdf(path)
+
     return text
 
 
@@ -184,6 +213,17 @@ def create_pairs(data_dir, label_map):
 
             #print(f"[DEBUG] Attempting to read Resume file: {resume_path}")
             resume_text = read_file(resume_path)
+
+            # for Debug - temporary
+            # 🔍 DEBUG ONLY FOR SPECIFIC FILES
+            if any(x in resume_path for x in [
+                "Candidate201", "Candidate202", "Candidate203",
+                "Candidate204", "Candidate205", "Candidate206",
+                "Candidate207", "Candidate208", "Candidate209"
+            ]):
+                print("\n🔍 DEBUG RESUME:", resume_path)
+                print("Length:", len(resume_text) if resume_text else 0)
+                #print("Preview:", resume_text[:1500] if resume_text else "EMPTY")
 
         except Exception as e:
             print("\n[ERROR] Reading file failed:")

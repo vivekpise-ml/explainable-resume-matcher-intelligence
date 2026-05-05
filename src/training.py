@@ -274,8 +274,14 @@ def run_pipeline(train_pairs, test_pairs):
     
     total = sum(label_counts.values())
 
+    '''
     weights = torch.tensor([
         total / label_counts[i] for i in range(4)
+    ]).to(device)
+    '''
+
+    weights = torch.tensor([
+        (total / label_counts[i]) ** 0.5 for i in range(4)
     ]).to(device)
 
     #criterion = nn.CrossEntropyLoss(weight = weights)

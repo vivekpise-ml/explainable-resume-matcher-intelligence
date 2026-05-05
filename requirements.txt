@@ -12,3 +12,5 @@ shap
 matplotlib
 PyPDF2
 torchvision
+pytesseract 
+pdf2image
