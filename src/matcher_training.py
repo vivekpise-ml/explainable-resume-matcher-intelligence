@@ -186,6 +186,31 @@ def compute_features(item, skill_dict, skill_graph):
             min(exact_count, related_count) / (max(exact_count, related_count) + 1e-5)
         )
 
+        # ----------- DOMAIN ALIGNMENT (NEW) -----------
+
+        raw_domain = item.get("domain", None)
+
+        if isinstance(raw_domain, str) and raw_domain.strip() != "":
+            domain = normalize_domain(raw_domain)
+        else:
+            domain = detect_domain(jd, domain_config)
+
+        domain_skills = set(
+            domain_config.get(domain, {}).get("core_skills", [])
+        )
+
+        overlap = len(resume_skills & domain_skills)
+
+        precision = overlap / max(1, len(resume_skills))
+        recall = overlap / max(1, len(domain_skills))
+
+        domain_score = (
+            2 * precision * recall
+            / (precision + recall + 1e-6)
+        )
+
+        feature_dict["domain_alignment_score"] = domain_score
+
     else:
         # fallback zeros
         for key in [
@@ -194,7 +219,7 @@ def compute_features(item, skill_dict, skill_graph):
             "coverage_ratio", 
             "resume_skill_count_norm", "jd_skill_count_norm",
             "exact_vs_related", "match_density",
-            "balance_score"
+            "balance_score", "domain_alignment_score"
         ]:
             feature_dict[key] = 0.0
 

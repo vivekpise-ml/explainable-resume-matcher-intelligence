@@ -45,14 +45,14 @@ N_SPLITS = 5
 # =========================================================
 # 🔴 Dropout disabling hook
 # =========================================================
-DISABLE_DROPOUT = True
+DISABLE_DROPOUT = False
 
 # -----------------------------
 # Config
 # -----------------------------
 model_name = "bert-base-uncased"
 batch_size = 4
-epochs = 3
+epochs = 5
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model_name = "bert-base-uncased"

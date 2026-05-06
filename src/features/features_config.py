@@ -6,5 +6,6 @@ FEATURE_ORDER = [
     "jd_skill_count_norm",
     "exact_vs_related",
     "match_density",
-    "balance_score"
+    "balance_score",
+    "domain_alignment_score"
 ]

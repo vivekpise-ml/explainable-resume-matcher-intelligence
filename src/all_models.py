@@ -79,6 +79,7 @@ class HybridModel(nn.Module):
         self.classifier = nn.Sequential(
             nn.Linear(input_dim, 256),
             nn.ReLU(),
+            nn.Dropout(0.2),
             nn.Linear(256, num_labels)
         )
 
