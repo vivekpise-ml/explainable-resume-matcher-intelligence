@@ -20,6 +20,9 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
+import pdfplumber
+from pdf2image import convert_from_bytes
+import pytesseract
 
 from src.domain_role.domain_detector import detect_domain, load_domain_config
 from src.domain_role.role_mapper import detect_role, load_role_config, normalize_role
@@ -42,11 +45,38 @@ import json
 # -----------------------------
 # File Extraction
 # -----------------------------
+'''
 def extract_text_from_pdf(file):
     reader = PyPDF2.PdfReader(file)
     text = ""
     for page in reader.pages:
         text += page.extract_text() or ""
+    return text
+'''
+
+def extract_text_from_pdf(file):
+    text = ""
+
+    try:
+        file.seek(0)
+        with pdfplumber.open(file) as pdf:
+            for page in pdf.pages:
+                page_text = page.extract_text()
+                if page_text:
+                    text += page_text
+    except:
+        pass
+
+    if len(text.strip()) < 300:
+        print("⚠️ OCR fallback triggered in Streamlit")
+
+        file.seek(0)
+        images = convert_from_bytes(file.read())
+
+        text = ""
+        for img in images:
+            text += pytesseract.image_to_string(img)
+
     return text
 
 def extract_text_from_docx(file):

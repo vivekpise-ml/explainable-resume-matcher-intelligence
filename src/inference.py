@@ -5,7 +5,9 @@ from transformers import BertTokenizer
 
 from src.matcher_training import compute_features
 from src.skill_extraction import extract_skills
-from src.training import HybridModel  # IMPORTANT
+# Commenting this importing from training, because importing causes the complete loading of the 
+# all the resumes from training.py
+from src.all_models import HybridModel  # IMPORTANT
 
 from src.domain_role.domain_detector import detect_domain
 from src.domain_role.role_mapper import detect_role, load_role_config, normalize_role
