@@ -129,6 +129,35 @@ def explain_features(model, features_tensor):
 
 
 # -----------------------------
+# Domain relevance explanation
+# -----------------------------
+def explain_domain_relevance(domain_score, matched_skills, domain):
+
+    if domain_score < 0.15:
+        strength = "Weak"
+
+    elif domain_score < 0.35:
+        strength = "Moderate"
+
+    elif domain_score < 0.60:
+        strength = "Strong"
+
+    else:
+        strength = "Very Strong"
+
+    interpretation = (
+        f"This resume demonstrates "
+        f"{strength.lower()} alignment with "
+        f"{domain}-domain technical requirements."
+    )
+
+    return {
+        "strength": strength,
+        "interpretation": interpretation,
+        "matched_skills": sorted(list(matched_skills))
+    }
+
+# -----------------------------
 # UI
 # -----------------------------
 st.set_page_config(page_title="Resume Matcher", layout="wide")
@@ -197,6 +226,16 @@ if st.button("Run Matching"):
 
             domain_score = compute_domain_score(resume_skills, domain, domain_config)
 
+            domain_skills = set(domain_config.get(domain, {}).get("core_skills", []))
+
+            matched_domain_skills = (resume_skills & domain_skills)
+
+            domain_explanation = explain_domain_relevance(
+                domain_score,
+                matched_domain_skills,
+                domain
+            )
+
             result = run_inference(
                 resume_text,
                 jd_text,
@@ -223,7 +262,8 @@ if st.button("Run Matching"):
 
                 "domain": domain,
                 "role": role,
-                "domain_score": round(domain_score, 3)
+                "domain_score": round(domain_score, 3),
+                "domain_explanation": domain_explanation
             })
         
     # 🔥 ADD THESE TWO LINES AT THE END (after results loop finishes)
@@ -283,7 +323,24 @@ if "results" in st.session_state:
 
         st.write(f"**Domain:** {res['domain']}")
         st.write(f"**Role:** {res['role']}")
-        st.write(f"**Domain Match Score:** {res['domain_score']}")
+        #st.write(f"**Domain Match Score:** {res['domain_score']}")
+        st.markdown("### 🌐 Domain Relevance Strength")
+
+        st.write(f"**Score:** {res['domain_score']}")
+
+        st.info(res["domain_explanation"]["interpretation"])
+
+        matched_domain_skills = (res["domain_explanation"]["matched_skills"])
+
+        if matched_domain_skills:
+
+            st.write("**Detected domain-relevant skills:**")
+
+            st.write(", ".join(matched_domain_skills))
+
+        else:
+
+            st.write("No strong domain-relevant skills detected.")
 
         # -----------------------------
         # Skill Analysis
@@ -309,7 +366,8 @@ if "results" in st.session_state:
                 "jd_skill_count_norm",
                 "exact_vs_related",
                 "match_density",
-                "balance_score"
+                "balance_score",
+                "domain_alignment_score"
             ]
         
         feature_names += [f"domain_{d}" for d in DOMAIN_LIST]
