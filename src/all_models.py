@@ -2,24 +2,23 @@ import torch
 import torch.nn as nn
 from transformers import BertModel
 
-# =========================================================
-# 🔴 HOOKS
-# =========================================================
+
+#  HOOKS
 USE_BERT = True
 
-# -----------------------------
+
 # Config
-# -----------------------------
+
 model_name = "bert-base-uncased"
 
-# -----------------------------
+
 # Shared BERT
-# -----------------------------
+
 GLOBAL_BERT = BertModel.from_pretrained(model_name)
 
-# =========================================================
-# 🔴 Controlled Fusion Model (NEW: Controlled Fusion Model (UNCHANGED))
-# =========================================================
+
+#  Controlled Fusion Model (NEW: Controlled Fusion Model (UNCHANGED))
+
 class BertWithFeatureFusion(nn.Module):
 
     def __init__(self, num_labels, feature_dim):
@@ -61,9 +60,8 @@ class BertWithFeatureFusion(nn.Module):
         return logits
 
 
-# =========================================================
-# 🔴 Hybrid Model
-# =========================================================
+
+#  Hybrid Model
 class HybridModel(nn.Module):
 
     def __init__(self, extra_dim, num_labels):
