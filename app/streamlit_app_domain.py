@@ -162,16 +162,16 @@ def explain_domain_relevance(domain_score, matched_skills, domain):
 # -----------------------------
 st.set_page_config(page_title="Resume Matcher", layout="wide")
 
-st.title("📄 Resume ↔ JD Matcher (Explainable AI)")
+st.title(" Resume ↔ JD Matcher (Explainable AI)")
 
-st.markdown("### 🎯 Match Score Interpretation")
+st.markdown("###  Match Score Interpretation")
 
 col1, col2, col3, col4 = st.columns(4)
 
-col1.metric("Class 0", "Poor ❌")
-col2.metric("Class 1", "Average ⚠️")
-col3.metric("Class 2", "Good ✅")
-col4.metric("Class 3", "Excellent 🏆")
+col1.metric("Class 0", "Poor ")
+col2.metric("Class 1", "Average ")
+col3.metric("Class 2", "Good ")
+col4.metric("Class 3", "Excellent ")
 
 model, tokenizer, skill_dict, skill_graph = load_all()
 
@@ -283,7 +283,7 @@ if "results" in st.session_state:
     # -----------------------------
     results = sorted(results, key=lambda x: x["confidence"], reverse=True)
 
-    st.subheader("🏆 Resume Ranking")
+    st.subheader("Resume Ranking")
 
     for i, res in enumerate(results):
 
@@ -300,7 +300,7 @@ if "results" in st.session_state:
         cls = class_map_reverse.get(res["prediction"], "?")
 
         #st.write(f"**Match:** {res['prediction']} (Class {cls})")
-        #st.markdown(f"### 🔥 **Match: {result['prediction']} (Class {cls})**")
+        #st.markdown(f"###  **Match: {result['prediction']} (Class {cls})**")
         if cls == 3:
             color = "green"
         elif cls == 2:
@@ -324,7 +324,7 @@ if "results" in st.session_state:
         st.write(f"**Domain:** {res['domain']}")
         st.write(f"**Role:** {res['role']}")
         #st.write(f"**Domain Match Score:** {res['domain_score']}")
-        st.markdown("### 🌐 Domain Relevance Strength")
+        st.markdown("### Domain Relevance Strength")
 
         st.write(f"**Score:** {res['domain_score']}")
 
@@ -345,16 +345,16 @@ if "results" in st.session_state:
         # -----------------------------
         # Skill Analysis
         # -----------------------------
-        with st.expander("🧠 Skill Analysis"):
+        with st.expander(" Skill Analysis"):
 
             st.write("**Matched Skills (All):**", res["matched_skills"])
             st.write("**Missing Skills (All):**", res["missing_skills"])
 
-            st.write("### 🛠️ Tech Skills")
+            st.write("### Tech Skills")
             st.write("Matched:", res["matched_tech"])
             st.write("Missing:", res["missing_tech"])
 
-            st.write("### 🤝 Soft Skills")
+            st.write("### Soft Skills")
             st.write("Matched:", res["matched_soft"])
             st.write("Missing:", res["missing_soft"])
 
@@ -376,7 +376,7 @@ if "results" in st.session_state:
         # -----------------------------
         # SHAP (optional per resume)
         # -----------------------------
-        with st.expander("📊 Feature Contribution (SHAP) - Slow"):
+        with st.expander("Feature Contribution (SHAP) - Slow"):
 
             if st.checkbox(f"Show SHAP for {res['name']}", key=res["name"]):
 
