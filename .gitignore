@@ -1,6 +1,9 @@
-data/raw/
+data/raw/more-resumes/sap_ta_abap_1/rest_of_real_resumes_not_pushed_to_git_but_trained_on_them_for_demo
+data/raw/more-resumes/sap_ta_abap_1/CRM-Resumes-used-for-abap-training
 *.pdf
 *.docx
+!data/raw/more-resumes/sap_ta_abap_1/*.pdf
+!data/raw/more-resumes/sap_ta_abap_1/*.docx
 __pycache__/
 *.pyc
 .env
@@ -8,7 +11,6 @@ src/rough_for_percent_to_number.py
 data/backup-orig
 data/Data.csv
 data/orig_Data.csv
-data/sap_ta_abap_1_Data_new.csv
 data/sap_ta_abap_1_Data.csv
 data/updated_Data.csv
 models
