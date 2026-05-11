@@ -1,19 +1,19 @@
 
-# 🔍 Explainable Resume Matcher Intelligence
+#  Explainable Resume Matcher Intelligence
 
 An advanced NLP-based system for matching resumes with job descriptions using **hybrid semantic + structured intelligence**, enhanced with **domain awareness, role alignment, and explainability**.
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 This project goes beyond traditional resume matching by combining:
 
-* 🧠 Transformer-based semantic understanding (BERT)
-* 🛠️ Skill-based feature engineering
-* 🏭 Domain detection & scoring
-* 👨‍💻 Role normalization & alignment
-* 📊 Explainability through structured features
+*  Transformer-based semantic understanding (BERT)
+*  Skill-based feature engineering
+*  Domain detection & scoring
+*  Role normalization & alignment
+*  Explainability through structured features
 
 The system mimics real recruiter reasoning:
 
@@ -21,7 +21,7 @@ The system mimics real recruiter reasoning:
 
 ---
 
-## 🎯 Key Features
+##  Key Features
 
 ### 1. Hybrid Matching Model
 
@@ -42,12 +42,12 @@ The system mimics real recruiter reasoning:
 * Domain scoring using:
 
   * skill overlap
-  * domain knowledge (`core_skills`)
+  * domain knowledge (`core_skills`) from (`domain_config.json`)
   * (optionally) skill graph expansion
 
 ### 4. Role Intelligence
 
-* Role detection from JD
+* Role detection from JD and matching with `role_config.json`
 * Role normalization to fixed categories
 * One-hot encoding for model input
 
@@ -69,7 +69,7 @@ The system mimics real recruiter reasoning:
 
 ---
 
-## 🧠 Core Insight (Key Learning)
+##  Core Insight (Key Learning)
 
 > **Feature engineering and data consistency impact performance more than hyperparameter tuning.**
 
@@ -79,7 +79,7 @@ The system mimics real recruiter reasoning:
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 project/
@@ -98,7 +98,7 @@ project/
 │   │   ├── role_config.json
 │   │
 │   ├── raw/              # JD + Resume data
-│   ├── Data.csv          # labeled dataset
+│   ├── sap_ta_abap_1_Data_new.csv          # labeled dataset
 │
 ├── models/
 │   ├── hybrid_model.pt
@@ -123,20 +123,33 @@ project/
 
 ---
 
-## ⚙️ Setup
+##  Setup
 
 ```bash
 pip install -r requirements.txt
+
 ```
+* For OCR reading installing following if environment is from conda in VS code
+
+```bash
+conda install -c conda-forge tesseract poppler
+```
+* otherwise from colab
+
+```bash
+!apt-get install -y poppler-utils tesseract-ocr
+!pip install pytesseract pdf2image
+```
+
 
 ---
 
-## ▶️ Running the Project
+## ▶ Running the Project
 
 ### 🔹 Train Model
 
 ```bash
-python src/training.py
+python -m src.training
 ```
 
 ---
@@ -144,12 +157,12 @@ python src/training.py
 ### 🔹 Run Inference (CLI)
 
 ```bash
-python src/batch_inference.py
+python -m src.batch_inference
 ```
 
 ---
 
-### 🔹 Run Streamlit UI
+###  Run Streamlit UI
 
 ```bash
 cd app
@@ -158,7 +171,7 @@ streamlit run streamlit_app_domain.py
 
 ---
 
-## 📊 Model Architecture
+##  Model Architecture
 
 ```
 Resume + JD
@@ -190,7 +203,7 @@ Prediction (Class 0–3)
 
 ---
 
-## 🧠 Domain Scoring (Advanced)
+##  Domain Scoring (Advanced)
 
 Domain score is computed using:
 
@@ -200,7 +213,7 @@ Domain score is computed using:
 
 ---
 
-## 🔥 Key Challenges Solved
+##  Key Challenges Solved
 
 * Noisy domain & role labels in dataset
 * Inconsistent feature pipelines (training vs inference)
@@ -210,7 +223,7 @@ Domain score is computed using:
 
 ---
 
-## 📈 Key Learnings
+##  Key Learnings
 
 * Feature design > model complexity
 * Data consistency across pipeline is critical
@@ -219,7 +232,7 @@ Domain score is computed using:
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 * Better domain scoring using embeddings
 * Improved soft skill extraction
@@ -230,7 +243,7 @@ Domain score is computed using:
 
 ---
 
-## 📌 Notes
+##  Notes
 
 * Raw resume/JD files are ignored via `.gitignore`
 * Model trained on structured + semantic hybrid features
