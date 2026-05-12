@@ -13,7 +13,7 @@ data/Data.csv
 data/orig_Data.csv
 data/sap_ta_abap_1_Data.csv
 data/updated_Data.csv
-models
+models/*.pt
 data/annotations/backup-annotations
 *.zip
 data/sap_ta_abap_1_Data_new-limited.csv
